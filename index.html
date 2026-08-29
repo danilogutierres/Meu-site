@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meus Livros</title>
+    <title>Livros Lívia e Ana</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -15,11 +20,123 @@
             text-align: center;
         }
 
-        header {
-            background: #222;
-            color: white;
-            padding: 35px 20px;
+        /* =========================
+           TELA DE ABERTURA
+        ========================= */
+
+        #abertura {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #6ec6ff, #a78bfa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: sair 1s ease 2.2s forwards;
         }
+
+        .logo-abertura {
+            color: white;
+            animation: aparecer 1.5s ease;
+        }
+
+        .logo-abertura h1 {
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        .logo-abertura p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .estrela {
+            position: absolute;
+            color: white;
+            font-size: 25px;
+            animation: brilho 2s infinite alternate;
+        }
+
+        .estrela1 {
+            top: 20%;
+            left: 20%;
+        }
+
+        .estrela2 {
+            top: 30%;
+            right: 20%;
+            animation-delay: .5s;
+        }
+
+        .estrela3 {
+            bottom: 25%;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .estrela4 {
+            bottom: 20%;
+            right: 30%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: scale(.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes brilho {
+
+            from {
+                opacity: .3;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        @keyframes sair {
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background: linear-gradient(135deg, #222, #444);
+            color: white;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        /* =========================
+           LIVROS
+        ========================= */
 
         .livros {
             padding: 30px 20px;
@@ -30,29 +147,103 @@
             max-width: 450px;
             margin: 25px auto;
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+            transition: transform .3s ease,
+                        box-shadow .3s ease;
         }
+
+        .livro:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .livro h2 {
+            color: #333;
+        }
+
+        .livro p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           BOTÃO
+        ========================= */
 
         .botao {
             display: inline-block;
-            background: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056d6);
             color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
+            padding: 13px 28px;
+            border-radius: 10px;
             text-decoration: none;
             margin-top: 10px;
+            font-weight: bold;
+
+            transition: transform .2s ease,
+                        box-shadow .2s ease;
         }
+
+        .botao:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, .3);
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            padding: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- =========================
+         TELA DE ABERTURA
+    ========================= -->
+
+    <div id="abertura">
+
+        <div class="estrela estrela1">✨</div>
+        <div class="estrela estrela2">⭐</div>
+        <div class="estrela estrela3">✨</div>
+        <div class="estrela estrela4">⭐</div>
+
+        <div class="logo-abertura">
+
+            <h1>📚 Livros Lívia e Ana</h1>
+
+            <p>Histórias para imaginar e sonhar ✨</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SITE PRINCIPAL
+    ========================= -->
+
     <header>
-        <h1>📚 Meus Livros</h1>
-        <p>Conheça minhas histórias</p>
+
+        <h1>📚 Livros Lívia e Ana</h1>
+
+        <p>Conheça nossas histórias</p>
+
     </header>
 
+
     <div class="livros">
+
 
         <div class="livro">
 
@@ -66,7 +257,9 @@
             <a class="botao"
                href="A_Galinha_e_o_Pintinho_Azulzinho.pdf"
                target="_blank">
+
                 📖 Acessar livro
+
             </a>
 
         </div>
@@ -84,12 +277,23 @@
             <a class="botao"
                href="A_Joaninha_Amarela_livro.pdf"
                target="_blank">
+
                 📖 Acessar livro
+
             </a>
 
         </div>
 
+
     </div>
+
+
+    <footer>
+
+        © 2026 Livros Lívia e Ana ❤️
+
+    </footer>
+
 
 </body>
 
