@@ -1,27 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meus Livros</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        .livros {
+            padding: 30px 20px;
+        }
+
+        .livro {
+            background: white;
+            max-width: 450px;
+            margin: 25px auto;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>📚 Meus Livros</h1>
+    <header>
+        <h1>📚 Meus Livros</h1>
+        <p>Conheça minhas histórias</p>
+    </header>
 
-    <h2>🐔 A Galinha e o Pintinho Azulzinho</h2>
-    <p>Uma aventura divertida sobre magia, amizade e família.</p>
+    <div class="livros">
 
-    <button>Acessar livro</button>
+        <div class="livro">
 
-    <hr>
+            <h2>🐔 A Galinha e o Pintinho Azulzinho</h2>
 
-    <h2>🐞 A Joaninha Amarela</h2>
-    <p>Uma aventura sobre amizade, família e aceitar aquilo que nos torna únicos.</p>
+            <p>
+                Uma aventura divertida sobre magia,
+                amizade e família.
+            </p>
 
-    <button>Acessar livro</button>
+            <a class="botao"
+               href="A_Galinha_e_o_Pintinho_Azulzinho.pdf"
+               target="_blank">
+                📖 Acessar livro
+            </a>
+
+        </div>
+
+
+        <div class="livro">
+
+            <h2>🐞 A Joaninha Amarela</h2>
+
+            <p>
+                Uma aventura sobre amizade, família
+                e aceitar aquilo que nos torna únicos.
+            </p>
+
+            <a class="botao"
+               href="A_Joaninha_Amarela_livro.pdf"
+               target="_blank">
+                📖 Acessar livro
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>
